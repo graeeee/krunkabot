@@ -70,6 +70,8 @@ client.on("message", async message =>
     
             let banned = message.mentions.members.first();
 
+        if(!banned)message.channel.send("Invalid Usage, **!mute <@User#1234> <time>**")
+
             message.guild.member(banned).ban
 
                 message.channel.send(`${member} has been banned.`);
