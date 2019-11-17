@@ -65,17 +65,13 @@ client.on("message", async message =>
     let args = messageArray.slice(1);
 
     if(cmd === `${prefix}ban`)
-    let admin = (message.member.roles.find(role => role.name === "Founders"))
 
-            if(!admin) return;
-            if(admin)
+    if(!message.member.roles.find(role => role.name === "Founders")) return;
+    
+            let banned = message.mentions.members.first();
 
-            var member= message.mentions.members.first();
-
-            member.ban().then((member) => {
+            message.guild.member(banned).ban
 
                 message.channel.send(`${member} has been banned.`);
-            }).catch(() => {
-            });
     });
 client.login(process.env.bot_token);
