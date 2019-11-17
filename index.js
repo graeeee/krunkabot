@@ -48,7 +48,7 @@ client.on("message", async message =>
         }
         else
         {
-            message.channel.send("No permission.");
+            return;
         }
       }
 });
