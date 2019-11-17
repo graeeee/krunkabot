@@ -65,6 +65,7 @@ client.on("message", async message =>
     let args = messageArray.slice(1);
 
     if(cmd === `${prefix}ban`)
+    
 
     if(!message.member.roles.find(role => role.name === "Founders")) return;
     
@@ -72,7 +73,7 @@ client.on("message", async message =>
 
         if(!banned)message.channel.send("Invalid Usage, **!mute <@User#1234> <time>**")
 
-            message.guild.member(banned).ban
+            member.ban(banned);
 
                 message.channel.send(`${banned} has been banned.`);
     });
