@@ -52,29 +52,4 @@ client.on("message", async message =>
         }
       }
 });
-client.on("message", async message =>
-{
-    if(message.author.bot)
-        return;
-    if(message.channel.type == "dm")
-        return;
-       
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-
-    if(cmd === `${prefix}ban`)
-    
-
-    if(!message.member.roles.find(role => role.name === "Founders")) return;
-    
-            let banned = message.mentions.members.first();
-
-        if(!banned)message.channel.send("Invalid Usage, **!mute <@User#1234> <time>**")
-
-            member.ban(banned);
-
-                message.channel.send(`${banned} has been banned.`);
-    });
 client.login(process.env.bot_token);
