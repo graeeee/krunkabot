@@ -63,12 +63,14 @@ client.on("message", async message =>
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
+    let admin = (message.member.roles.find(role => role.name === "Founders"))
 
         if (message.content.startsWith(`${prefix}ban`)) {
             if(message.member.roles.find(role => role.name === "Founders"))
-            let admin = (message.member.roles.find(role => role.name === "Founders"))
+
             
             if(!admin) return;
+            if(admin)
 
             var member= message.mentions.members.first();
 
