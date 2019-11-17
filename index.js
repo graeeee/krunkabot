@@ -52,4 +52,4 @@ client.on("message", async message =>
         }
       }
 });
-client.login("token");
+client.login("bot_token");
