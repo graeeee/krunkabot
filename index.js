@@ -52,4 +52,4 @@ client.on("message", async message =>
         }
       }
 });
-client.login("NTQ4NjY3Mzk2NDc1MzIyMzc4.XNnjWg.kzPht-El-kU6JlO_JHb2bl_HWN4");
+client.login("BOT_TOKEN");
