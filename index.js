@@ -52,4 +52,31 @@ client.on("message", async message =>
         }
       }
 });
+client.on("message", async message =>
+{
+    if(message.author.bot)
+        return;
+    if(message.channel.type == "dm")
+        return;
+       
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+
+        if (message.content.startsWith(`${prefix}ban`)) {
+            if(message.member.roles.find(role => role.name === "Founders"))
+            let admin = (message.member.roles.find(role => role.name === "Founders"))
+            
+            if(!admin) return;
+
+            var member= message.mentions.members.first();
+
+            member.ban().then((member) => {
+
+                message.channel.send(`${member} has been banned.`);
+            }).catch(() => {
+            });
+        }
+    });
 client.login(process.env.bot_token);
