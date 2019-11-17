@@ -1,0 +1,16 @@
+{
+    "name": "raidbossbot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "grae",
+    "license": "ISC",
+    "dependencies": {
+        "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+        "discord.js": "^11.4.2",
+        "ms": "^2.1.2"
+    }
+}
