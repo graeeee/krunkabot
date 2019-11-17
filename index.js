@@ -74,6 +74,6 @@ client.on("message", async message =>
 
             message.guild.member(banned).ban
 
-                message.channel.send(`${member} has been banned.`);
+                message.channel.send(`${banned} has been banned.`);
     });
 client.login(process.env.bot_token);
