@@ -63,12 +63,10 @@ client.on("message", async message =>
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
+
+    if(cmd === `${prefix}ban`)
     let admin = (message.member.roles.find(role => role.name === "Founders"))
 
-        if (message.content.startsWith(`${prefix}ban`)) {
-            if(message.member.roles.find(role => role.name === "Founders"))
-
-            
             if(!admin) return;
             if(admin)
 
@@ -79,6 +77,5 @@ client.on("message", async message =>
                 message.channel.send(`${member} has been banned.`);
             }).catch(() => {
             });
-        }
     });
 client.login(process.env.bot_token);
