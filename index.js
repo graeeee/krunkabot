@@ -191,8 +191,6 @@ client.on("message", async message => {
                 message.channel.send(botembed);
                 let OnDuty = message.member.guild.roles.find("name", "OnDuty");
                 message.member.addRole(OnDuty)
-                let OffDuty = message.member.guild.roles.find("name", "OffDuty");
-                message.member.removeRole(OffDuty)
                 await message.delete()
               
             }
@@ -218,8 +216,6 @@ client.on("message", async message => {
                 .setColor("#008000")
                 .addField(`OffDuty Rank Given`,`${message.author} is now OffDuty.`);  
                 message.channel.send(botembed);
-                let OffDuty = message.member.guild.roles.find("name", "OffDuty");
-                message.member.addRole(OffDuty)
                 let OnDuty = message.member.guild.roles.find("name", "OnDuty");
                 message.member.removeRole(OnDuty)
                 await message.delete()
