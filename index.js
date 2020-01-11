@@ -214,7 +214,7 @@ client.on("message", async message => {
             if(cmd === offduty){
                 let botembed = new Discord.RichEmbed()
                 .setColor("#008000")
-                .addField(`OffDuty Rank Given`,`${message.author} is now OffDuty.`);  
+                .addField(`OnDuty Rank Removed`,`${message.author} is now OffDuty.`);  
                 message.channel.send(botembed);
                 let OnDuty = message.member.guild.roles.find("name", "OnDuty");
                 message.member.removeRole(OnDuty)
