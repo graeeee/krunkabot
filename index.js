@@ -170,4 +170,62 @@ client.on("message", async message => {
         message.channel.send(botembed);
     }
 });
+//onduty role
+client.on("message", async message => {
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let onduty = (`${prefix}onduty`)
+   
+    if (message.channel.id === '665652656160636948') {
+        if((message.content!=onduty)) {
+            await message.delete(5000)
+            message.author.send('Please use the command !onduty or !offduty.');
+        }
+        else{
+            if(cmd === onduty){
+                let botembed = new Discord.RichEmbed()
+                .setColor("#008000")
+                .addField(`OnDuty Rank Given`,`${message.author} is now OnDuty.`);  
+                message.channel.send(botembed);
+                let OnDuty = message.member.guild.roles.find("name", "OnDuty");
+                message.member.addRole(OnDuty)
+                let OffDuty = message.member.guild.roles.find("name", "OffDuty");
+                message.member.removeRole(OffDuty)
+                await message.delete()
+              
+            }
+        }
+    }
+});
+//offduty role
+client.on("message", async message => {
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let offduty = (`${prefix}offduty`)
+   
+    if (message.channel.id === '665652656160636948') {
+        if((message.content!=offduty)) {
+            await message.delete(5000)
+            message.author.send('Please use the command !offduty.');
+        }
+        else{
+            if(cmd === offduty){
+                let botembed = new Discord.RichEmbed()
+                .setColor("#008000")
+                .addField(`OffDuty Rank Given`,`${message.author} is now OffDuty.`);  
+                message.channel.send(botembed);
+                let OffDuty = message.member.guild.roles.find("name", "OffDuty");
+                message.member.addRole(OffDuty)
+                let OnDuty = message.member.guild.roles.find("name", "OnDuty");
+                message.member.removeRole(OnDuty)
+                await message.delete()
+              
+            }
+        }
+    }
+});
 client.login(process.env.bot_token);
