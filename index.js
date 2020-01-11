@@ -132,4 +132,5 @@ client.on("message", async message =>
 
       return message.channel.send({embed});
     }
+});
 client.login(process.env.bot_token);
