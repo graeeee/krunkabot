@@ -133,4 +133,24 @@ client.on("message", async message =>
       return message.channel.send({embed});
     }
 });
+//queue1
+client.on('voiceStateUpdate', (oldMember, newMember) =>
+{
+    if(oldMember.voiceChannel === undefined || oldMember.voiceChannelID !== newMember.voiceChannelID)
+    {
+      if(newMember.voiceChannel === undefined || newMember.voiceChannelID !== "665648411822915586")
+        return;
+
+      //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #1.');
+      let queue1embed = new Discord.RichEmbed()
+      .setColor("#808080")
+      .setDescription (`${newMember.displayName} joined queue #1.`)
+      .setTimestamp();
+          
+      const m = newMember.guild.channels.get('628675356030795804').send(queue1embed)
+              .then((msg) => {
+                  getjointime[newMember] = msg.createdTimestamp;
+      });
+    }
+});
 client.login(process.env.bot_token);
