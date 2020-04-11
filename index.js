@@ -24,7 +24,7 @@ client.on("message", async message =>
         let tempRole = message.guild.roles.find(role => role.name === "no10mans");
         let tempReason = args[2];
        
-        if(message.member.roles.find(role => role.name === "Founder") ||
+        if(message.member.roles.find(role => role.name === "Founders") ||
             message.member.roles.find(role => role.name === "Admins"))
         {
             if(!tempUser)
