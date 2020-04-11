@@ -86,7 +86,7 @@ client.on("message", async message => {
     .setThumbnail(botpfp)
     .setTitle("**Raidboss Information**")
     .setColor("#808080")
-    .addField("<:raidboss:392574240643219456> **Channel Information**", "\n<#187595606573842432> - Just what it suggests, a general chat. Please no images or videos here.\n\n<#421469485610958848> - Use the support Channel for any requests or support needs (unbans, reports, 10 man roles, etc)\n\n<#397912711524253696> - Use this channel to find people to play or to get involved in a 10 man\n\n<#372976620257935360> - All memes, images, videos, and other off-topic stuff")
+    .addField("<:valorant:698327855133884446> **Channel Information**", "\n<#187595606573842432> - Just what it suggests, a general chat. Please no images or videos here.\n\n<#421469485610958848> - Use the support Channel for any requests or support needs (unbans, reports, 10 man roles, etc)\n\n<#397912711524253696> - Use this channel to find people to play or to get involved in a 10 man\n\n<#372976620257935360> - All memes, images, videos, and other off-topic stuff")
     .addBlankField()
     .addField("<:raidboss:392574240643219456> **Roles Information**", "\n<@&190805090464956416> - The Mad King\n\n<@&339524053146664960> - Head Admins\n\n <@&190805575523762176> - Admins (5v5)\n\n<@&445925181966516244> - Admins (surf)\n\n<@&496135647870844928> - 10 man Hosts\n\n<@&482947162947190802> - 10man Regulars/Long Time Players\n\n<@&563707849784426506> - 10man Players\n\nAny other roles, are self assigned, in this channel <#524911345708171285>.")
     .addBlankField()
