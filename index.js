@@ -151,6 +151,61 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
       });
     }
 });
+//queue 1
+// Added by SeaC
+
+let getjointime = [0];
+
+function cleanDate(a)
+{
+  var d = new Date(a);
+  var c = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+  return c;
+}
+
+client.on("message", async message =>
+{
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return;
+
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+
+    if(cmd === `${prefix}queue2`)
+    {
+      let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323700025524345");
+      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
+
+      const embed = new Discord.RichEmbed()
+        .setTitle("Queue #1")
+        .setColor("#FF0000")
+        .setDescription(membersInQueue.join("\n"))
+        .setTimestamp()
+
+      return message.channel.send({embed});
+    }
+});
+//queue1
+client.on('voiceStateUpdate', (oldMember, newMember) =>
+{
+    if(oldMember.voiceChannel === undefined || oldMember.voiceChannelID !== newMember.voiceChannelID)
+    {
+      if(newMember.voiceChannel === undefined || newMember.voiceChannelID !== "698323700025524345")
+        return;
+
+      //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #1.');
+      let queue1embed = new Discord.RichEmbed()
+      .setColor("#FF0000")
+      .setDescription (`${newMember.displayName} joined queue #2.`)
+      .setTimestamp();
+          
+      const m = newMember.guild.channels.get('698328958805999617').send(queue1embed)
+              .then((msg) => {
+                  getjointime[newMember] = msg.createdTimestamp;
+      });
+    }
+});
 //onduty2
 client.on("message", async message => {
     if(message.author.bot) return;
