@@ -16,22 +16,22 @@ client.on("message", async message =>
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
        
-    if(cmd === `${prefix}10manban`)
+    if(cmd === `${prefix}gameban`)
     {
        
         let tempUser = message.mentions.members.first();
         let tempTime = args[1];
-        let tempRole = message.guild.roles.find(role => role.name === "no10mans");
+        let tempRole = message.guild.roles.find(role => role.name === "gameban");
         let tempReason = args[2];
        
         if(message.member.roles.find(role => role.name === "Founders") ||
             message.member.roles.find(role => role.name === "Admins"))
         {
             if(!tempUser)
-                return message.channel.send('Invalid Usage, `!10manban <@User#1234> <time> <reason>`');
+                return message.channel.send('Invalid Usage, `!gameban <@User#1234> <time> <reason>`');
            
             if(!tempTime)
-                return message.channel.send('Invalid Usage, `!10manban <@User#1234> <time> <reason>`');
+                return message.channel.send('Invalid Usage, `!gameban <@User#1234> <time> <reason>`');
 
             if(!tempReason)
             {
