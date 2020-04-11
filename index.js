@@ -119,12 +119,12 @@ client.on("message", async message =>
 
     if(cmd === `${prefix}queue1`)
     {
-      let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "665648411822915586");
+      let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323056484941914");
       let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
 
       const embed = new Discord.RichEmbed()
-        .setTitle("Current Queue #1")
-        .setColor("#D80808")
+        .setTitle("Queue #1")
+        .setColor("#FF0000")
         .setDescription(membersInQueue.join("\n"))
         .setTimestamp()
 
@@ -136,16 +136,16 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
 {
     if(oldMember.voiceChannel === undefined || oldMember.voiceChannelID !== newMember.voiceChannelID)
     {
-      if(newMember.voiceChannel === undefined || newMember.voiceChannelID !== "665648411822915586")
+      if(newMember.voiceChannel === undefined || newMember.voiceChannelID !== "698323056484941914")
         return;
 
       //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #1.');
       let queue1embed = new Discord.RichEmbed()
-      .setColor("#808080")
+      .setColor("#FF0000")
       .setDescription (`${newMember.displayName} joined queue #1.`)
       .setTimestamp();
           
-      const m = newMember.guild.channels.get('628675356030795804').send(queue1embed)
+      const m = newMember.guild.channels.get('698328958805999617').send(queue1embed)
               .then((msg) => {
                   getjointime[newMember] = msg.createdTimestamp;
       });
