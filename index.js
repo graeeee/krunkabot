@@ -151,10 +151,8 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
       });
     }
 });
-//queue 1
+//queue 2
 // Added by SeaC
-
-let getjointime = [0];
 
 function cleanDate(a)
 {
