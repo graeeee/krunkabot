@@ -42,7 +42,7 @@ client.on("message", async message =>
            
             const embed = new Discord.RichEmbed()
                 .setTitle(`User has been banned from 10mans`)
-                .setColor("#008000")
+                .setColor("#FF0000")
                 .setThumbnail(tempUser.user.avatarURL)
                 .addField(`User:`, `<@${tempUser.id}>`, true)
                 .addField(`Admin:`, `${message.author}`, true)
@@ -51,7 +51,7 @@ client.on("message", async message =>
             message.channel.send({embed})
             const DMembed = new Discord.RichEmbed()
                 .setColor("#008000")
-                .setDescription(`**You have been banned from 10mans, if you would like to appeal or have any questions about the ban, please contact 10mancounsel in the <#421469485610958848> channel.**\n\n**Length:** ${tempTime}\n\n**Admin:** ${message.author}\n\n**Reason:** ${tempReason}`);
+                .setDescription(`**You have been banned from 10mans, if you would like to appeal or have any questions about the ban, please contact any admins, mods, or owner about your situation in <#698332345916456972> **\n\n**Length:** ${tempTime}\n\n**Admin/Mod:** ${message.author}\n\n**Reason:** ${tempReason}`);
             tempUser.sendMessage(DMembed);
            
             setTimeout(function()
