@@ -24,8 +24,8 @@ client.on("message", async message =>
         let tempRole = message.guild.roles.find(role => role.name === "no10mans");
         let tempReason = args[2];
        
-        if(message.member.roles.find(role => role.name === "Owner") ||
-            message.member.roles.find(role => role.name === "Head-Admins"))
+        if(message.member.roles.find(role => role.name === "Founder") ||
+            message.member.roles.find(role => role.name === "Admins"))
         {
             if(!tempUser)
                 return message.channel.send('Invalid Usage, `!10manban <@User#1234> <time> <reason>`');
