@@ -133,8 +133,8 @@ client.on("message", async message =>
         .setColor("#FF0000")
         .setDescription(membersInQueue.join("\n"))
         .setTimestamp()
-    if (!message.membersInChannel) return;
-      return message.channel.send({embed});
+    if (!message.membersInChannel) return message.channel.send("No perms");
+      else message.channel.send({embed});
     }
 });
 //queue1
