@@ -212,7 +212,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
 });
 //testtstts
 
-let getjointime = [0];
 
 function cleanDate(a)
 {
