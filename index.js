@@ -133,7 +133,7 @@ client.on("message", async message =>
         .setColor("#FF0000")
         .setDescription(membersInQueue.join("\n"))
         .setTimestamp()
-    if(message.guild.members.filter(n => n.voiceChannelID === "698323056484941914") return message.channel.send({embed});
+    if(message.guild.members.filter(n => n.voiceChannelID === "698323056484941914")) return message.channel.send({embed});
       else message.channel.send("No perms");
     }
 });
