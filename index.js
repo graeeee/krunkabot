@@ -4,6 +4,12 @@ const client = new Discord.Client();
 const ms = require("ms");
 //10man ban command
 //
+client.on("ready", async () => {
+  console.log(`${client.user.username} is online!`);
+
+  client.user.setActivity("Vice's Valorant Discord!", {type: "WATCHING"});
+
+});
 client.on("message", async message =>
 {
     if(message.author.bot)
@@ -204,6 +210,39 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
       });
     }
 });
+//testtstts
 
+let getjointime = [0];
+
+function cleanDate(a)
+{
+  var d = new Date(a);
+  var c = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+  return c;
+}
+
+client.on("message", async message =>
+{
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return;
+
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+
+    if(cmd === `${prefix}vote`)
+    {
+      let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323056484941914");
+      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
+
+      const embed = new Discord.RichEmbed()
+        .setTitle("Queue #1")
+        .setColor("#FF0000")
+        .setDescription(membersInQueue.join("\n"))
+        .setTimestamp()
+    if (!message.membersInChannel) return;
+      else message.channel.send({embed});
+    }
+});
 
 client.login(process.env.bot_token);
