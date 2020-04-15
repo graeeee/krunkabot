@@ -127,14 +127,14 @@ client.on("message", async message =>
     {
       let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323056484941914");
       let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
-
+    if(membersInChannel) 
       const embed = new Discord.RichEmbed()
         .setTitle("Queue #1")
         .setColor("#FF0000")
         .setDescription(membersInQueue.join("\n"))
         .setTimestamp()
-    if(!membersInChannel) return message.channel.send({embed});
-      else message.channel.send("No perms");
+    return message.channel.send({embed});
+      else message.channel.send("yea im a shit bot that doesn't work");
     }
 });
 //queue1
