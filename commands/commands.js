@@ -10,8 +10,8 @@ module.exports.run = async (client, message, args) => {
     .addField("!queue", "Shows all the queue commands.")
     .addField("!userinfo", "Shows players info.")
     .addField("!serverinfo", "Shows servers info.")
-    .addField("!riot (RiotName#ID)", "Link your riot account to our discord.")
-    .addField("!getriot *@user*", "Get other users riot name and ID.")
+    .addField("!setriot (RiotName#ID)", "Link your riot account to our discord.")
+    .addField("!riot *@user*", "Get other users riot name and ID.")
     .setTimestamp()
     .setFooter('Vice Valorant 10mans/Scrims', botpfp);
     message.channel.send(demoembed);
