@@ -163,12 +163,17 @@ client.on("message", async message =>
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
-  let mentioneduser = message.mentions.members.first;
+  
+let member;
+if (message.mentions.users.first()) {
+  member = message.mentions.users.first();
+} else {
+  member = message.author
+}
+if (message.content.startsWith (`${prefix}setriot`)) {
+    editedmessage = message.content.slice (8);
 
-if (message.content.startsWith (`${prefix}riot`)) {
-    editedmessage = message.content.slice (5);
-
-    client.msgs [message.author.username] = {
+    client.msgs [message.member.username] = {
       message: editedmessage
     }
     fs.writeFile ("./msgs.json", JSON.stringify (client.msgs, null, 4), err => {
@@ -176,11 +181,11 @@ if (message.content.startsWith (`${prefix}riot`)) {
       message.channel.send('**Your Riot Account has been linked to this discord account, if you messed up or changed accounts, you can redo the command at anytime**');
 });
     }
-   if (message.content.startsWith (`${prefix}getriot`)) {
-    let _message = client.msgs [message.author.username].message;
-    message.channel.send (`${mentioneduser}'s Riot is:` + _message);
+    if(cmd === `${prefix}getriot`) {
+    let _message = client.msgs [message.member.username].message;
+    message.channel.send (`${member}'s Riot is:` + _message);
     }
 });
 
 
-client.login(process.env.bot_token);
+client.login("NTQ4NjY3Mzk2NDc1MzIyMzc4.XpyjzQ.spuuXdjb7n62GbV_cma0YyEReYM");
