@@ -64,16 +64,18 @@ client.on("message", async message =>
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
 
+
     if(cmd === `${prefix}naqueue`)
     {
+
       let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323056484941914");
-      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + moment(getjointime[n]).format('LTS') + ")");
+      let membersInQueue = membersInChannel.map(n =>  `(` + moment(getjointime[n]).format('LTS') + `) ` + n.displayName);
    
       const embed = new Discord.RichEmbed()
-        .setTitle("Queue NA")
+        .setTitle("Queue NA (EST)")
         .setColor("#FF0000")
-        .setDescription(membersInQueue.join("\n"))
-        .setTimestamp()
+        .setDescription(membersInQueue.join(`\n`))
+        .setFooter('Vice Valorant 10mans/Scrims ');
     return message.channel.send({embed});
     }
 });
@@ -100,7 +102,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
 
 
 
-//queue 2
+//queue EUUUUU
 // Added by SeaC
 
 
@@ -109,6 +111,7 @@ client.on("message", async message =>
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
 
+
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
@@ -116,13 +119,13 @@ client.on("message", async message =>
     if(cmd === `${prefix}euqueue`)
     {
       let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323700025524345");
-      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + moment(getjointime[n]).format('LTS') + ")");
+      let membersInQueue = membersInChannel.map(n =>  " (" + moment(getjointime[n]).format('LTS') + ") " + n.displayName);
 
       const embed = new Discord.RichEmbed()
-        .setTitle("Queue EU")
+        .setTitle("Queue EU (EST)")
         .setColor("#FF0000")
         .setDescription(membersInQueue.join("\n"))
-        .setTimestamp()
+        .setFooter('Vice Valorant 10mans/Scrims');
 
       return message.channel.send({embed});
     }
@@ -178,6 +181,8 @@ if (message.content.startsWith (`${prefix}riot`)) {
     message.channel.send (`${mentioneduser}'s Riot is:` + _message);
     }
 });
+
+
 
 
 client.login(process.env.bot_token);
