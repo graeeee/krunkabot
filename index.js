@@ -185,4 +185,4 @@ if (message.content.startsWith (`${prefix}setriot`)) {
 });
 
 
-client.login("NTQ4NjY3Mzk2NDc1MzIyMzc4.XpyjzQ.spuuXdjb7n62GbV_cma0YyEReYM");
+client.login(process.env.bot_token);
