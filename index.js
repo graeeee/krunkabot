@@ -3,10 +3,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const ms = require("ms");
 const fs = require("fs");
-var moment = require('moment');
 client.commands = new Discord.Collection();
 var moment = require('moment');
-
 
 
 
@@ -183,8 +181,6 @@ if (message.content.startsWith (`${prefix}riot`)) {
     message.channel.send (`${mentioneduser}'s Riot is:` + _message);
     }
 });
-
-
 
 
 client.login(process.env.bot_token);
