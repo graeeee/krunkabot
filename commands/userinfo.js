@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
         let user = message.mentions.users.first() || message.author;
     
     let playerpfp = message.author.avatarURL;
-    let botpfp = bot.user.displayAvatarURL;
+    let botpfp = client.user.displayAvatarURL;
     let infoembed = new Discord.RichEmbed()
     .setThumbnail(botpfp)
     .setAuthor(`${member}'s Information`, playerpfp,)

@@ -152,9 +152,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
 });
 
 
-
-
-
 //!riot command
 client.msgs = require ("./msgs.json");
 client.on("message", async message =>
