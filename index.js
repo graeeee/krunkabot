@@ -165,7 +165,7 @@ client.on("message", async message =>
   let args = messageArray.slice(1);
   let mentioneduser = message.author;
 
-   if(cmd === `${prefix}euqueue`) {
+   if(cmd === `${prefix}setriot`) {
     editedmessage = message.content.slice (5);
 
     client.msgs [message.author.username] = {
@@ -176,7 +176,7 @@ client.on("message", async message =>
       message.channel.send('**Your Riot Account has been linked to this discord account, if you messed up or changed accounts, you can redo the command at anytime**');
 });
     }
-   if (message.content.startsWith (`${prefix}getriot`)) {
+   if (message.content.startsWith (`${prefix}riot`)) {
     let _message = client.msgs [message.author.username].message;
     message.channel.send (`${mentioneduser}'s Riot account is:` + _message);
     }
