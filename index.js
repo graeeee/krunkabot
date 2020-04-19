@@ -180,4 +180,4 @@ if (message.content.startsWith (`${prefix}riot`)) {
 });
 
 
-client.login("");
+client.login(process.env.bot_token);
