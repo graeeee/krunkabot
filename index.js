@@ -173,16 +173,19 @@ if (message.content.startsWith (`${prefix}setriot`)) {
     client.msgs [message.member.username] = {
       message: editedmessage
     }
-    fs.writeFile ("./msgs.json", JSON.stringify (client.msgs, null, 4), err => {
+    fs.writeFile ("./msgs.json", JSON.stringify (member.msgs, null, 4), err => {
       if (err) throw err;
       message.channel.send('**Your Riot Account has been linked to this discord account, if you messed up or changed accounts, you can redo the command at anytime**');
 });
     }
     if(cmd === `${prefix}getriot`) {
-    let _message = client.msgs [message.member.username].message;
+    let _message = member.msgs [message.member.username].message;
     message.channel.send (`${member}'s Riot is:` + _message);
     }
 });
+
+
+
 
 
 //on join message
