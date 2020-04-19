@@ -185,9 +185,6 @@ if (message.content.startsWith (`${prefix}setriot`)) {
 });
 
 
-
-
-
 //on join message
 client.on("guildMemberAdd", function(message) {
     
