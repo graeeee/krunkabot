@@ -152,9 +152,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
 });
 
 
-
-
-
 //!riot command
 client.msgs = require ("./msgs.json");
 client.on("message", async message =>
@@ -163,22 +160,27 @@ client.on("message", async message =>
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
-  let mentioneduser = message.author;
+  
+let member;
+if (message.mentions.users.first()) {
+  member = message.mentions.users.first();
+} else {
+  member = message.author
+}
+if (message.content.startsWith (`${prefix}setriot`)) {
+    editedmessage = message.content.slice (8);
 
-   if(cmd === `${prefix}setriot`) {
-    editedmessage = message.content.slice (5);
-
-    client.msgs [message.author.username] = {
+    client.msgs [message.member.username] = {
       message: editedmessage
     }
     fs.writeFile ("./msgs.json", JSON.stringify (client.msgs, null, 4), err => {
-      if (err) console.log (err);
+      if (err) throw err;
       message.channel.send('**Your Riot Account has been linked to this discord account, if you messed up or changed accounts, you can redo the command at anytime**');
 });
     }
-   if (message.content.startsWith (`${prefix}riot`)) {
-    let _message = client.msgs [message.author.username].message;
-    message.channel.send (`${mentioneduser}'s Riot account is:` + _message);
+    if(cmd === `${prefix}getriot`) {
+    let _message = client.msgs [message.member.username].message;
+    message.channel.send (`${member}'s Riot is:` + _message);
     }
 });
 
