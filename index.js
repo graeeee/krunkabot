@@ -163,7 +163,7 @@ client.on("message", async message =>
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
-  let mentioneduser = message.mentions.members.first;
+  let mentioneduser = message.author;
 
    if(cmd === `${prefix}euqueue`) {
     editedmessage = message.content.slice (5);
@@ -178,7 +178,7 @@ client.on("message", async message =>
     }
    if (message.content.startsWith (`${prefix}getriot`)) {
     let _message = client.msgs [message.author.username].message;
-    message.channel.send (`${mentioneduser} Riot account is:` + _message);
+    message.channel.send (`${mentioneduser}'s Riot account is:` + _message);
     }
 });
 
