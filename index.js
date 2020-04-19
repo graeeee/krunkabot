@@ -4,6 +4,8 @@ const client = new Discord.Client();
 const ms = require("ms");
 const fs = require("fs");
 client.commands = new Discord.Collection();
+var moment = require('moment');
+
 
 
 fs.readdir("./commands/", (err, files) => {
@@ -65,7 +67,7 @@ client.on("message", async message =>
     if(cmd === `${prefix}naqueue`)
     {
       let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323056484941914");
-      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
+      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + moment(getjointime[n]).format('LTS') + ")");
    
       const embed = new Discord.RichEmbed()
         .setTitle("Queue NA")
@@ -101,12 +103,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
 //queue 2
 // Added by SeaC
 
-function cleanDate(a)
-{
-  var d = new Date(a);
-  var c = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
-  return c;
-}
 
 client.on("message", async message =>
 {
@@ -120,7 +116,7 @@ client.on("message", async message =>
     if(cmd === `${prefix}euqueue`)
     {
       let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323700025524345");
-      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
+      let membersInQueue = membersInChannel.map(n => n.displayName + " (" + moment(getjointime[n]).format('LTS') + ")");
 
       const embed = new Discord.RichEmbed()
         .setTitle("Queue EU")
@@ -184,4 +180,4 @@ if (message.content.startsWith (`${prefix}riot`)) {
 });
 
 
-client.login(process.env.bot_token);
+client.login("NTQ4NjY3Mzk2NDc1MzIyMzc4.XpvmtQ.owAmLTrn5hGp3ShIUX7mCGqEsh0");
