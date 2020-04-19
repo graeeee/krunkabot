@@ -3,8 +3,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const ms = require("ms");
 const fs = require("fs");
-client.commands = new Discord.Collection();
 var moment = require('moment');
+client.commands = new Discord.Collection();
 
 
 
