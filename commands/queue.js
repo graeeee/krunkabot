@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
     
-    let botpfp = bot.user.displayAvatarURL;
+    let botpfp = client.user.displayAvatarURL;
     let demoembed = new Discord.RichEmbed()
     .setThumbnail(botpfp)
     .setTitle("**Queue Commands**")
