@@ -183,6 +183,6 @@ if (message.content.startsWith (`${prefix}setriot`)) {
     message.channel.send (`${member}'s Riot is:` + _message);
     }
 });
-
+test
 
 client.login(process.env.bot_token);
