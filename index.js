@@ -172,7 +172,7 @@ if (message.content.startsWith (`${prefix}riot`)) {
       message: editedmessage
     }
     fs.writeFile ("./msgs.json", JSON.stringify (client.msgs, null, 4), err => {
-      if (err) throw err;
+      if (err) console.log (err);
       message.channel.send('**Your Riot Account has been linked to this discord account, if you messed up or changed accounts, you can redo the command at anytime**');
 });
     }
