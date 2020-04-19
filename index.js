@@ -180,4 +180,4 @@ if (message.content.startsWith (`${prefix}riot`)) {
 });
 
 
-client.login("NTQ4NjY3Mzk2NDc1MzIyMzc4.XpvmtQ.owAmLTrn5hGp3ShIUX7mCGqEsh0");
+client.login("");
