@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const ms = require("ms");
 //10man ban command
 //
-est
+
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
 
