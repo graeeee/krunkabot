@@ -178,7 +178,7 @@ if (message.content.startsWith (`${prefix}riot`)) {
     }
    if (message.content.startsWith (`${prefix}getriot`)) {
     let _message = client.msgs [message.author.username].message;
-    message.channel.send (`${mentioneduser}'s Riot is:` + _message);
+    message.channel.send (`Riot is:` + _message);
     }
 });
 
