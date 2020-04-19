@@ -184,25 +184,4 @@ if (message.content.startsWith (`${prefix}setriot`)) {
     }
 });
 
-
-
-
-
-//on join message
-client.on("guildMemberAdd", function(message) {
-    
-    let guild = message.guild;
-    let member = message;
-    let membercount = client.users.size;
-    let botpfp = client.user.displayAvatarURL;
-
-    const joinembed = new Discord.RichEmbed()
-    .setColor("#FF0000")
-    .setDescription(`**Welcome ${member.user} to Vice Valorant 10mans/Scrims!**\nIf you have any questions or want to join our 10mans, send a message in our <#698332345916456972> chat including your Riot Name and ID. Have Fun!`)
-    .setThumbnail(botpfp)
-    .setFooter("Vice Valorant 10mans/Scrims")
-    .setTimestamp;
-    member.sendMessage(joinembed);
-});
-
 client.login(process.env.bot_token);
