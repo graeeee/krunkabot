@@ -20,9 +20,9 @@ module.exports.run = async (client, message, args) => {
     let kickembed = new Discord.RichEmbed()
     .setTitle(`User Kicked`)
     .setColor("#FF0000")
-    .addField(`Kicked User`, `${kickeduser}`)
-    .addField(`Kicked By`, `${message.author}`)
-    .addField(`Reason`, `${kickedreason}`)
+    .addField(`Kicked User`, `${kickeduser}`, true)
+    .addField(`Kicked By`, `${message.author}`, true)
+    .addField(`Reason`, `${kickedreason}`, true)
     .setTimestamp()
     .setFooter('Kick System', botpfp);
 
