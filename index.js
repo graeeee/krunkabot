@@ -185,4 +185,5 @@ if (message.content.startsWith (`${prefix}setriot`)) {
     }
 });
 
+
 client.login(process.env.bot_token);
