@@ -155,7 +155,6 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
 //!riot command
 client.msgs = require ("./msgs.json");
 client.on("message", async message =>
-          testing
 {
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
