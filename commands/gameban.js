@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const ms = require("ms");
 
 module.exports.run = async (client, message, args) => {
  
@@ -8,7 +9,7 @@ module.exports.run = async (client, message, args) => {
     let tempReason = args[2];
    
     if(message.member.roles.find(role => role.name === "Founders") ||
-        message.member.roles.find(role => role.name === "Admins"))
+        message.member.roles.find(role => role.name === "Staff"))
     {
         if(!tempUser)
             return message.channel.send('Invalid Usage, `!gameban <@User#1234> <time> <reason>`');
