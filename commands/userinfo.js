@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
     let playerpfp = message.author.avatarURL;
     let botpfp = client.user.displayAvatarURL;
     let infoembed = new Discord.RichEmbed()
-    .setThumbnail(botpfp)
+    .setThumbnail(playerpfp)
     .setAuthor(`${member}'s Information`, playerpfp,)
     .setColor(`#808080`)
     .addField(`Username`, user.username, true)
