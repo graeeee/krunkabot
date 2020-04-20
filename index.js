@@ -180,7 +180,7 @@ if (message.content.startsWith (`${prefix}setriot`)) {
     }
     if(cmd === `${prefix}getriot`) {
     let _message = client.msgs [message.member.username].message;
-    message.channel.send (`${member}'s Riot is:` + _message`);
+    message.channel.send (`${member}'s Riot is:` + _message);
     }
 });
 
