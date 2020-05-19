@@ -21,10 +21,8 @@ setTimeout(function()
 {
     message.channel.send("@ here, do the command **!d bump** as soon as possible. Thanks!");
 }, ms(tempTime));
-
-
-module.exports.help = {
-name: "d bump"
+ 
 }
-  }
-});
+    module.exports.help = {
+        name: "help"
+    }
