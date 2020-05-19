@@ -26,3 +26,5 @@ setTimeout(function()
 module.exports.help = {
 name: "d bump"
 }
+  }
+});
