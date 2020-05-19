@@ -185,5 +185,33 @@ if (message.content.startsWith (`${prefix}setriot`)) {
     }
 });
 
+client.on("message", async message => {
+  let prefix = botconfig.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+  let hours = ("2h");
+  let dbump = (`${prefix}d`)
+  if(cmd === dbump){
+ 
+    let tempTime = hours;
+   
+    if(message.member.roles.find(role => role.name === "Founders") ||
+        message.member.roles.find(role => role.name === "Staff") ||
+        message.member.roles.find(role => role.name === "Captains"))
+    {
+       
+        const embed = new Discord.RichEmbed()
+            .addField(`**Server Bumped**`, `Disboard has been bumped. Starting 2 hour timer`)
+            .setColor("#FF0000");
+        message.channel.send({embed})
+       
+        setTimeout(function()
+        {
+            message.channel.send(`@here, The server bump has expired. use the command **!d bump** to re-bump!`);
+        }, ms(tempTime));
+      }
+    } 
+    });
 
 client.login(process.env.bot_token);
