@@ -7,7 +7,7 @@ const ms = require("ms");
 
 module.exports.run = async (client, message, args) => {
  
-    let tempTime = ms('2h');
+    let tempTime = ms('1m');
 
        
         const embed = new Discord.RichEmbed()
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
        
         setTimeout(function()
         {
-            message.channel.send("@here, do the command **!d bump** as soon as possible. Thanks!");
+            message.channel.send("@ here, do the command **!d bump** as soon as possible. Thanks!");
         }, ms(tempTime));
     }
     else
