@@ -16,7 +16,6 @@ const embed = new Discord.RichEmbed()
     .addField(`Server Bumped`, `The server was recently bumped. Timer has been reset`, true)
     .setTimestamp();
 message.channel.send({embed})
-const DMembed = new Discord.RichEmbed()
 
 setTimeout(function()
 {
