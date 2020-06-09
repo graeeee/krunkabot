@@ -231,7 +231,7 @@ client.on("message", async message => {
     .addField("**Queue Filled**", "Queue has reached 10 players. Captains will start adding players on VALORANT to fill the party.")
     .addField("Captains", "@Captain1 and @Captain2 ")
     .addField("@RandomCaptain has been chosen for first pick, and @OtherCaptain has been chosen for map and side.")
-    .setTimestamp();
+    .setTimestamp()
     .setFooter('Vice Valorant 10mans/Scrims', botpfp);
     message.channel.send(demoembed);
 }
