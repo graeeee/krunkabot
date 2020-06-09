@@ -214,4 +214,18 @@ client.on("message", async message => {
     } 
     });
 
+client.on("message", async message => {
+    
+    let botpfp = client.user.displayAvatarURL;
+    let demoembed = new Discord.RichEmbed()
+    .setThumbnail(botpfp)
+    .setColor("#808080")
+    .addField("**Queue Filled**", "Queue has reached 10 players. Captains will start adding players on VALORANT to fill the party.")
+    .addField("Captains", "@Captain1 and @Captain2 ")
+    .addField("@RandomCaptain has been chosen for first pick, and @OtherCaptain has been chosen for map and side.");
+    .setTimestamp()
+    .setFooter('Vice Valorant 10mans/Scrims', botpfp);
+    message.channel.send(demoembed);
+}
+
 client.login(process.env.bot_token);
