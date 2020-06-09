@@ -234,6 +234,7 @@ client.on("message", async message => {
     .setTimestamp()
     .setFooter('Vice Valorant 10mans/Scrims', botpfp);
     message.channel.send(demoembed);
+            }
 });
 
 client.login(process.env.bot_token);
