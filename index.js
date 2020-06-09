@@ -216,6 +216,14 @@ client.on("message", async message => {
 
 client.on("message", async message => {
     
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let test = (`${prefix}testing`)
+   
+    if (message.channel.id === '540133702039109642') {
+            if(cmd === test){
     let botpfp = client.user.displayAvatarURL;
     let demoembed = new Discord.RichEmbed()
     .setThumbnail(botpfp)
