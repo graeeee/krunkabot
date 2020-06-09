@@ -233,6 +233,7 @@ client.on("message", async message => {
     .addField("Captain Selections", "@RandomCaptain has been chosen for first pick\n @OtherCaptain has been chosen for map and side.")
     .setTimestamp()
     .setFooter('Vice Valorant 10mans/Scrims', botpfp);
+    message.channel.send("@10manqueue na")
     message.channel.send(demoembed);
      }
     }
