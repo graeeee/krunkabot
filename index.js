@@ -222,7 +222,7 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
     let test = (`${prefix}testing`)
    
-    if (message.channel.id === '540133702039109642') {
+    if (message.channel.id === '698328586096214098') {
             if(cmd === test){
     let botpfp = client.user.displayAvatarURL;
     let demoembed = new Discord.RichEmbed()
