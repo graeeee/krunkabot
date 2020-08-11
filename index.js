@@ -238,6 +238,8 @@ client.on("message", async message => {
      }
     }
 });
+
+client.on("message", async message => {
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
