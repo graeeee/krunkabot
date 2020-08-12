@@ -253,7 +253,7 @@ return rand[Math.floor(Math.random()*rand.length)];
 const embed = {
 "title": `Coin Flip`,
 "description": doRandHT(),
-"color": FF5733,
+"color": 16726101,
 
 };
 message.channel.send({ embed });
