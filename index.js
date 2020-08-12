@@ -238,8 +238,7 @@ client.on("message", async message => {
      }
     }
 });
-
-client.on("message", async message => {
+  client.on("message", async message => {
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
@@ -255,8 +254,10 @@ const embed = {
 "title": `Here is the winner!`,
 "description": doRandHT(),
 "color": 7584788,
+
 };
 message.channel.send({ embed });
 }
-};
+});
+
 client.login(process.env.bot_token);
