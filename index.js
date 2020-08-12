@@ -247,13 +247,13 @@ client.on("message", async message => {
 if(cmd == "!coin")
 {
 function doRandHT() {
-var rand = ['HEADS!','TAILS!'];
+var rand = ['Heads','Tails'];
 return rand[Math.floor(Math.random()*rand.length)];
 }
 const embed = {
-"title": `Here is the winner!`,
+"title": `Coin Flip`,
 "description": doRandHT(),
-"color": 7584788,
+"color": FF5733,
 
 };
 message.channel.send({ embed });
