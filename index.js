@@ -257,5 +257,6 @@ const embed = {
 "color": 7584788,
 };
 message.channel.send({ embed });
+}
 };
 client.login(process.env.bot_token);
