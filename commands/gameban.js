@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
     let tempRole = message.guild.roles.find(role => role.name === "gameban");
     let tempReason = args[2];
    
-    if(message.member.roles.find(role => role.name === "Founders") ||
+    if(message.member.roles.find(role => role.name === "Owners") ||
         message.member.roles.find(role => role.name === "Staff"))
     {
         if(!tempUser)
