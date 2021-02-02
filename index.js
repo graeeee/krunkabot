@@ -269,6 +269,7 @@ message.channel.send({ embed });
     if (message.content.includes (`#`)) {
         message.member.setNickname(message.content.replace('riot ', ''));           
         }    
+    }
     });
 
 client.login(process.env.bot_token);
