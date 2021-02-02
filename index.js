@@ -268,7 +268,7 @@ message.channel.send({ embed });
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
         if(message.channel.id === '698328586096214098'){
-        message.client.setNickname(usernickname);
+        message.author.setNickname(usernickname);
            
         }    
     }
