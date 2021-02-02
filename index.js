@@ -271,6 +271,7 @@ message.channel.send({ embed });
         message.client.setNickname(usernickname);
            
         }    
+    }
     });
 
 client.login(process.env.bot_token);
