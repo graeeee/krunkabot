@@ -259,7 +259,7 @@ const embed = {
 message.channel.send({ embed });
 }
 });
- client.on('message', message => {
+ client.on("message", async message => {
     
     let prefix = botconfig.prefix;
     let riot = (`${prefix}riot`)
