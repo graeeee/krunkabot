@@ -259,27 +259,6 @@ const embed = {
 message.channel.send({ embed });
 }
 });
- client.on("message", async message => {
-    
-    let prefix = botconfig.prefix;
-    let riot = (`${prefix}riot`)
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    if(message.channel.id === '698328586096214098'){
-      if (message.content.includes!= (riot, "#")) {
-        message.channel.send(`${message.author}, incorrect arguments.`)        
-        await message.delete(5000)
-      }
-      else{
-        if (message.content.includes (riot, "#")) {
-          message.member.setNickname(message.content.replace(riot, ''));     
-          message.channel.send("Nickname set.")
-          await message.delete(5000)
-      
-        }
-      }
-    }
-    });
+
 
 client.login(process.env.bot_token);
