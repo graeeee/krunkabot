@@ -267,15 +267,16 @@ message.channel.send({ embed });
     let args = messageArray.slice(1);
     if(message.channel.id === '698328586096214098'){
       if(message.author.bot) return;
-      if (message.content.includes!= ("!riot")) {
+      if (message.content.includes!= ("#")) {
+         await message.delete()
         message.channel.send(`${message.author}, incorrect arguments.`)        
-        await message.delete(5000)
+         await message.delete(5000)
       }
       else{
-        if (message.content.includes ("!riot")) {
-          message.member.setNickname(message.content.replace("!riot", ''));     
+        if (message.content.includes ("#")) {
+          message.member.setNickname(message.content.replace(" ", ''));     
           message.channel.send("Nickname set.")
-          await message.delete()
+          await message.delete(5000)
       
         }
       }
