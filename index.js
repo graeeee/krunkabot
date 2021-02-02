@@ -259,9 +259,7 @@ const embed = {
 message.channel.send({ embed });
 }
 });
-const Discord = require("discord.js");
 
-module.exports.run = async (client, message, args) => {
 
     let messageArray = message.content.split(" ");
     client.on('message', message => {
