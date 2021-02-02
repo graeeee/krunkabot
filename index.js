@@ -268,6 +268,5 @@ message.channel.send({ embed });
         message.client.setNickname(string);
         }    
     });
-}
 
 client.login(process.env.bot_token);
