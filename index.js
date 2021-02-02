@@ -267,7 +267,7 @@ message.channel.send({ embed });
     let args = messageArray.slice(1);
     if(message.channel.id === '698328586096214098'){
     if (message.content.includes (`#`)) {
-        message.member.setNickname(message.content.replace('riot ', ''));           
+        message.member.setNickname(message.content.replace('!riot ', ''));           
         }    
     }
     });
