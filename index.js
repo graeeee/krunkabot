@@ -267,7 +267,7 @@ message.channel.send({ embed });
     let args = messageArray.slice(1);
     if(message.channel.id === '698328586096214098'){
       if(message.author.bot) return;
-      if (message.content.includes!= ("!riot")) {
+      if (message.content.includes ("!riot")) {
           message.member.setNickname(message.content.replace("!riot", ''));     
           message.channel.send("Nickname set.")
          await message.bot.delete(5000)
