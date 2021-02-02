@@ -262,11 +262,10 @@ message.channel.send({ embed });
  client.on('message', message => {
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
-    const name = string.substring(string.indexOf("#"));
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
         if(message.channel.id === '698328586096214098'){
-        message.client.setNickname(name);
+        message.client.setNickname();
         }    
     });
 
