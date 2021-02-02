@@ -260,18 +260,15 @@ message.channel.send({ embed });
 }
 });
  client.on('message', message => {
-    if (message.content.includes (`#`)) {
-    usernickname = message.content.slice (5);
-
+    
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-        if(message.channel.id === '698328586096214098'){
-        message.author.setNickname(usernickname);
-           
+    if(message.channel.id === '698328586096214098'){
+    if (message.content.includes (`#`)) {
+        message.member.setNickname(message.content.replace('riot ', ''));           
         }    
-    }
     });
 
 client.login(process.env.bot_token);
