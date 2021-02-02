@@ -260,8 +260,10 @@ message.channel.send({ embed });
 }
 });
 
-
+    let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
     client.on('message', message => {
         if(message.channel.id === '698328586096214098'){
         string.substring(string.indexOf("#"));
