@@ -65,7 +65,7 @@ client.on("message", async message =>
     let cmd = messageArray[0];
 
 
-    if(cmd === `${prefix}naqueue`)
+    if(cmd === `${prefix}queue`)
     {
 
       let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323056484941914");
@@ -90,7 +90,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
       //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #1.');
       let queue1embed = new Discord.RichEmbed()
       .setColor("#FF0000")
-      .setDescription (`${newMember.displayName} joined queue NA.`)
+      .setDescription (`${newMember.displayName} joined queue 1.`)
       .setTimestamp();
           
       const m = newMember.guild.channels.get('698328958805999617').send(queue1embed)
@@ -116,7 +116,7 @@ client.on("message", async message =>
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
 
-    if(cmd === `${prefix}euqueue`)
+    if(cmd === `${prefix}queue2`)
     {
       let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323700025524345");
       let membersInQueue = membersInChannel.map(n =>  " (" + moment(getjointime[n]).format('LTS') + ") " + n.displayName);
@@ -138,10 +138,10 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
       if(newMember.voiceChannel === undefined || newMember.voiceChannelID !== "698323700025524345")
         return;
 
-      //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #1.');
+      //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #2.');
       let queue1embed = new Discord.RichEmbed()
       .setColor("#FF0000")
-      .setDescription (`${newMember.displayName} joined queue EU.`)
+      .setDescription (`${newMember.displayName} joined queue 2.`)
       .setTimestamp();
           
       const m = newMember.guild.channels.get('698328958805999617').send(queue1embed)
@@ -150,40 +150,9 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
       });
     }
 });
+//D BUMP COMMAND
 
 
-//!riot command
-client.msgs = require ("./msgs.json");
-client.on("message", async message =>
-
-{
-  let prefix = botconfig.prefix;
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
-  
-let member;
-if (message.mentions.users.first()) {
-  member = message.mentions.users.first();
-} else {
-  member = message.author
-}
-if (message.content.startsWith (`${prefix}setriot`)) {
-    editedmessage = message.content.slice (8);
-
-    client.msgs [message.member.username] = {
-      message: editedmessage
-    }
-    fs.writeFile ("./msgs.json", JSON.stringify (client.msgs, null, 4), err => {
-      if (err) throw err;
-      message.channel.send('**Your Riot Account has been linked to this discord account, if you messed up or changed accounts, you can redo the command at anytime**');
-});
-    }
-    if(cmd === `${prefix}getriot`) {
-    let _message = client.msgs [member.mentions].message;
-    message.channel.send (`${member}'s Riot is:` + _message);
-    }
-});
 
 client.on("message", async message => {
   let prefix = botconfig.prefix;
@@ -196,7 +165,7 @@ client.on("message", async message => {
  
     let tempTime = hours;
    
-    if(message.member.roles.find(role => role.name === "Founders") ||
+    if(message.member.roles.find(role => role.name === "Owners") ||
         message.member.roles.find(role => role.name === "Staff") ||
         message.member.roles.find(role => role.name === "Captains"))
     {
@@ -214,49 +183,7 @@ client.on("message", async message => {
     } 
     });
 
-client.on("message", async message => {
-    
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    let test = (`${prefix}testing`)
-   
-    if (message.channel.id === '698328586096214098') {
-            if(cmd === test){
-    let botpfp = client.user.displayAvatarURL;
-    let demoembed = new Discord.RichEmbed()
-    .setThumbnail(botpfp)
-    .setColor("#808080")
-    .addField("**Queue Filled**", "Queue has reached 10 players. Captains will start adding players on VALORANT to fill the party.")
-    .addField("Captains", "@Captain1 and @Captain2 ")
-    .addField("Captain Selections", "@RandomCaptain has been chosen for first pick\n @OtherCaptain has been chosen for map and side.")
-    .setTimestamp()
-    .setFooter('Vice Valorant 10mans/Scrims', botpfp);
-    message.channel.send("@10manqueue na")
-    message.channel.send(demoembed);
-     }
-    }
-});
-  client.on("message", async message => {
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-
-if(cmd == "!coin")
-{
-function doRandHT() {
-var rand = ['Heads','Tails'];
-return rand[Math.floor(Math.random()*rand.length)];
-}
-const embed = {
-"title": `Coin Flip`,
-"description": doRandHT(),
-"color": 16726101,
-
-};
-message.channel.send({ embed });
+hannel.send({ embed });
 }
 });
  client.on("message", async message => {
@@ -269,7 +196,7 @@ message.channel.send({ embed });
       if(message.author.bot) return;
       if (message.content.includes ("!riot")) {
           message.member.setNickname(message.content.replace("!riot", ''));     
-          client.sendMessage("Nickname set in Vice Valorant Scrims Discord.");
+         msg.channel.type === ("dm") + msg.author.sendMessage("Nickname set in Vice Valorant Scrims Discord.");
          await message.member.delete(5000)
       }
       else{
