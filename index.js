@@ -161,7 +161,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
       if(message.author.bot) return;
       if (message.content.includes ("!riot")) {
           message.member.setNickname(message.content.replace("!riot", ''));     
-         msg.channel.type === ("dm") + msg.author.sendMessage("Nickname set in Vice Valorant Scrims Discord.");
+         message.channel.type === ("dm") + message.author.sendMessage("Nickname set in Vice Valorant Scrims Discord.");
          await message.member.delete(5000)
       }
       else{
