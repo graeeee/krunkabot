@@ -150,6 +150,25 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
       });
     }
 });
+//RIOT COMMAND
+ client.on("message", async message => {
+    
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    if(message.channel.id === '698328586096214098'){
+      if(message.author.bot) return;
+      if (message.content.includes ("!riot")) {
+          message.member.setNickname(message.content.replace("!riot", ''));     
+         msg.channel.type === ("dm") + msg.author.sendMessage("Nickname set in Vice Valorant Scrims Discord.");
+         await message.member.delete(5000)
+      }
+      else{
+        return;
+        }
+      }
+    });
 //D BUMP COMMAND
 
 
@@ -184,25 +203,5 @@ client.on("message", async message => {
     });
 
 channel.send({ embed });
-
-});
- client.on("message", async message => {
-    
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    if(message.channel.id === '698328586096214098'){
-      if(message.author.bot) return;
-      if (message.content.includes ("!riot")) {
-          message.member.setNickname(message.content.replace("!riot", ''));     
-         msg.channel.type === ("dm") + msg.author.sendMessage("Nickname set in Vice Valorant Scrims Discord.");
-         await message.member.delete(5000)
-      }
-      else{
-        return;
-        }
-      }
-    });
 
 client.login(process.env.bot_token);
