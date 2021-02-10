@@ -173,7 +173,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
     .setTimestamp()
     .setFooter('Vice Valorant 10mans/Scrims');
     
-    if(message.channel.id === '698328586096214098'){
+    if(message.channel.id === '808936463416557589'){
       if(message.author.bot) return;
       if (message.content.includes ("!riot")) {
           message.member.setNickname(message.content.replace("!riot", ''));     
