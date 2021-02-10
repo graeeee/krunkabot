@@ -35,7 +35,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.send({embed})
         const DMembed = new Discord.RichEmbed()
             .setColor("#008000")
-            .setDescription(`**You have been banned from 10mans, if you would like to appeal or have any questions about the ban, please contact any admins, mods, or owner about your situation in <#698332345916456972> **\n\n**Length:** ${tempTime}\n\n**Admin/Mod:** ${message.author}\n\n**Reason:** ${tempReason}`);
+            .setDescription(`**You have been banned from 10mans, if you would like to appeal or have any questions about the ban, please contact any admins, mods, or owner about your situation in the admins DM's. **\n\n**Length:** ${tempTime}\n\n**Admin/Mod:** ${message.author}\n\n**Reason:** ${tempReason}`);
         tempUser.sendMessage(DMembed);
        
         setTimeout(function()
