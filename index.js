@@ -165,7 +165,9 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
          await message.delete(5000)
       }
       else{
-        return;
+        if (message.content.includes != "!riot"))
+        await message.delete()
+          message.channel.type === ("dm") + message.author.sendMessage(`You did not use !riot to set your username, please retry the command with the following arguments *!riot {Username}#{Clientid}*`);
         }
       }
     });
