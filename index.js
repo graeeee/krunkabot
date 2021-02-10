@@ -269,7 +269,7 @@ message.channel.send({ embed });
       if(message.author.bot) return;
       if (message.content.includes ("!riot")) {
           message.member.setNickname(message.content.replace("!riot", ''));     
-          message.channel.send("Nickname set.")
+          client.sendMessage("Nickname set in Vice Valorant Scrims Discord.");
          await message.member.delete(5000)
       }
       else{
