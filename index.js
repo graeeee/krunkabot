@@ -183,8 +183,8 @@ client.on("message", async message => {
     } 
     });
 
-hannel.send({ embed });
-}
+channel.send({ embed });
+
 });
  client.on("message", async message => {
     
