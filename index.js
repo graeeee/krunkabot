@@ -162,16 +162,16 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
     const correctcommand = new Discord.RichEmbed()
     .setThumbnail(botpfp)
     .setColor("00FF00")
-    .addField("**Riot Nickname Set**", "Your nickname has been changed in Vice Valorant 10mans/Scrims, if you made an error while entering your name and id, you can redo the command at anytime. ")
+    .addField("**Riot Nickname Set**", "Your nickname has been changed in Vice Valorant 10mans/Scrims\nif you made an error while entering your name and id, you can redo the command at anytime. ")
     .setTimestamp()
-    .setFooter('Vice Valorant 10mans/Scrims', botpfp);
+    .setFooter('Vice Valorant 10mans/Scrims');
            
     const notcorrectcommand = new Discord.RichEmbed()
     .setThumbnail(botpfp)
     .setColor("DC143C")
     .addField("**Riot Nickname Error**", "You incorrectly used the !riot command, please retry the command with the following arguments \n**!riot (Username)#(Clientid)**")
     .setTimestamp()
-    .setFooter('Vice Valorant 10mans/Scrims', botpfp);
+    .setFooter('Vice Valorant 10mans/Scrims');
     
     if(message.channel.id === '698328586096214098'){
       if(message.author.bot) return;
@@ -219,5 +219,22 @@ client.on("message", async message => {
       }
     } 
     });
-
+ client.on("message", async message => {
+    
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let thecommand = (`${prefix}alkdfjaoeanoaoelancei`)
+    if(cmd === thecommand){
+       
+    let botpfp = client.user.displayAvatarURL;
+    const test= new Discord.RichEmbed()
+    .setThumbnail(botpfp)
+    .setColor("F8C300")
+    .addField("**Set Your Riot Name**", "Set your nickname so players can find you easily by using the command \n\n**!riot (Username)#(Clientid)**")
+    .setTimestamp()
+    .setFooter('Vice Valorant 10mans/Scrims');
+    message.channel.send(test)
+ });
 client.login(process.env.bot_token);
