@@ -270,7 +270,7 @@ message.channel.send({ embed });
       if (message.content.includes ("!riot")) {
           message.member.setNickname(message.content.replace("!riot", ''));     
           message.channel.send("Nickname set.")
-         await message.bot.delete(5000)
+         await message.member.delete(5000)
       }
       else{
         return;
