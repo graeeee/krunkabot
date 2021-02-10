@@ -169,7 +169,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
     const notcorrectcommand = new Discord.RichEmbed()
     .setThumbnail(botpfp)
     .setColor("DC143C")
-    .addField("**Riot Nickname Error**", "You incorrectly used the !riot command, please retry the command with the following arguments ***!riot {Username}#{Clientid}*** ")
+    .addField("**Riot Nickname Error**", "You incorrectly used the !riot command, please retry the command with the following arguments \n**!riot {Username}#{Clientid}** ")
     .setTimestamp()
     .setFooter('Vice Valorant 10mans/Scrims', botpfp);
     
