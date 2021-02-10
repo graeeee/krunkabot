@@ -232,7 +232,7 @@ client.on("message", async message => {
     const test= new Discord.RichEmbed()
     .setThumbnail(botpfp)
     .setColor("F8C300")
-    .addField("**Set Your Riot Name**", "Set your nickname so players can find you easily by using the command \n\n**!riot (Username)#(Clientid)**")
+    .addField("**Set Your Riot Name**", "\nSet your nickname so players can find you easily by using the command \n\n***!riot (Username)#(Clientid)***")
     .setTimestamp()
     .setFooter('Vice Valorant 10mans/Scrims');
     message.channel.send(test)
