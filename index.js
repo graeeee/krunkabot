@@ -157,11 +157,30 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
+    
+    let botpfp = client.user.displayAvatarURL;
+    let correctcommand = new Discord.RichEmbed()
+    .setThumbnail(botpfp)
+    .setColor("00FF00")
+    .addField("**Riot Nickname Set**", "Your nickname has been changed in Vice Valorant 10mans/Scrims, if you made an error while entering your name and id, you can redo the command at anytime. ")
+    .setTimestamp()
+    .setFooter('Vice Valorant 10mans/Scrims', botpfp);
+    message.channel.send(demoembed);
+}
+           
+    let notcorrectcommand = new Discord.RichEmbed()
+    .setThumbnail(botpfp)
+    .setColor("00FF00")
+    .addField("**Riot Nickname Error**", "You incorrectly used the !riot command, please retry the command with the following arguments ***!riot {Username}#{Clientid}*** ")
+    .setTimestamp()
+    .setFooter('Vice Valorant 10mans/Scrims', botpfp);
+    message.channel.send(demoembed);
+}
     if(message.channel.id === '698328586096214098'){
       if(message.author.bot) return;
       if (message.content.includes ("!riot")) {
           message.member.setNickname(message.content.replace("!riot", ''));     
-         message.channel.type === ("dm") + message.author.sendMessage("Nickname set in Vice Valorant Scrims Discord, If it was set incorrectly, just resend your username and client id again.");
+         message.channel.type === ("dm") + message.author.sendMessage(correctcommand);
          await message.delete(5000)
       }
       else{
