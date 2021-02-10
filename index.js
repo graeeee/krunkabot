@@ -159,23 +159,20 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
     let args = messageArray.slice(1);
     
     let botpfp = client.user.displayAvatarURL;
-    let correctcommand = new Discord.RichEmbed()
+    const correctcommand = new Discord.RichEmbed()
     .setThumbnail(botpfp)
     .setColor("00FF00")
     .addField("**Riot Nickname Set**", "Your nickname has been changed in Vice Valorant 10mans/Scrims, if you made an error while entering your name and id, you can redo the command at anytime. ")
     .setTimestamp()
     .setFooter('Vice Valorant 10mans/Scrims', botpfp);
-    message.channel.send(demoembed);
-}
            
-    let notcorrectcommand = new Discord.RichEmbed()
+    const notcorrectcommand = new Discord.RichEmbed()
     .setThumbnail(botpfp)
-    .setColor("00FF00")
+    .setColor("DC143C")
     .addField("**Riot Nickname Error**", "You incorrectly used the !riot command, please retry the command with the following arguments ***!riot {Username}#{Clientid}*** ")
     .setTimestamp()
     .setFooter('Vice Valorant 10mans/Scrims', botpfp);
-    message.channel.send(demoembed);
-}
+    
     if(message.channel.id === '698328586096214098'){
       if(message.author.bot) return;
       if (message.content.includes ("!riot")) {
@@ -186,7 +183,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
       else{
         if (message.content.includes != "!riot");
         await message.delete()
-          message.channel.type === ("dm") + message.author.sendMessage(`You did not use !riot to set your username, please retry the command with the following arguments *!riot {Username}#{Clientid}*`);
+          message.channel.type === ("dm") + message.author.sendMessage(notcorrectcommand);
         }
       }
     });
