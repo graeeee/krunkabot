@@ -65,7 +65,7 @@ client.on("message", async message =>
     let cmd = messageArray[0];
 
 
-    if(cmd === `${prefix}queue`)
+    if(cmd === `${prefix}queue1`)
     {
 
       let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323056484941914");
@@ -122,7 +122,7 @@ client.on("message", async message =>
       let membersInQueue = membersInChannel.map(n =>  " (" + moment(getjointime[n]).format('LTS') + ") " + n.displayName);
 
       const embed = new Discord.RichEmbed()
-        .setTitle("Queue EU (EST)")
+        .setTitle("Queue 2 (EST)")
         .setColor("#FF0000")
         .setDescription(membersInQueue.join("\n"))
         .setFooter('Vice Valorant 10mans/Scrims');
