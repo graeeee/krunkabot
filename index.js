@@ -204,7 +204,7 @@ client.on("message", async message => {
    
     if(message.member.roles.find(role => role.name === "Owners") ||
         message.member.roles.find(role => role.name === "Staff") ||
-        message.member.roles.find(role => role.name === "Captains"))
+        message.member.roles.find(role => role.name === "Hosts"))
     {
        
         const embed = new Discord.RichEmbed()
