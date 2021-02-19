@@ -214,7 +214,7 @@ client.on("message", async message => {
        
         setTimeout(function()
         {
-            message.channel.send(`@here, The server bump has expired. use the command **!d bump** to re-bump!`);
+            message.channel.send(`@here, The server bump has expired. use the command **!d bump** to re-bump!\nalso bump here! https://top.gg/servers/698321471881347094/vote`);
         }, ms(tempTime));
       }
     } 
