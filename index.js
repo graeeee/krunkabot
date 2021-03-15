@@ -28,7 +28,7 @@ fs.readdir("./commands/", (err, files) => {
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
 
-  client.user.setActivity("Vice's Valorant Discord!", {type: "WATCHING"});
+  client.user.setActivity("Vice Discord!", {type: "WATCHING"});
 
 });
 
