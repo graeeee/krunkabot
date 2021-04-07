@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
     let tempReason = args[2];
    
     if(message.member.roles.find(role => role.name === "Owners") ||
-        message.member.roles.find(role => role.name === "Staff"))
+        message.member.roles.find(role => role.name === "Hosts"))
     {
         if(!tempUser)
             return message.channel.send('Invalid Usage, `!gameban <@User#1234> <time> <reason>`');
