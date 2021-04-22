@@ -123,7 +123,7 @@ client.on("message", async message =>
 
       const embed = new Discord.RichEmbed()
         .setTitle("Lobby 2 ")
-        .setColor("#FF0000")
+        .setColor("#FEE354")
         .setDescription(membersInQueue.join("\n"))
         .setFooter('Vice Valorant 10mans/Scrims');
 
@@ -140,7 +140,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
 
       //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #2.');
       let queue1embed = new Discord.RichEmbed()
-      .setColor("#FF0000")
+      .setColor("#FEE354")
       .setDescription (`${newMember.displayName} joined queue 2.`)
       .setTimestamp();
           
