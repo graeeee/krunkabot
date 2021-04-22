@@ -74,7 +74,7 @@ client.on("message", async message =>
       const embed = new Discord.RichEmbed()
         .setTitle("<#698323056484941914> Player List")
         .addField("<#698323056484941914> Player List", membersInQueue.join(`\n`))
-        .setColor("#FEE354"))
+        .setColor("#FEE354")
         .setFooter('Vice Valorant 10mans/Scrims ');
     return message.channel.send({embed});
     }
