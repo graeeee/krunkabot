@@ -72,9 +72,9 @@ client.on("message", async message =>
       let membersInQueue = membersInChannel.map(n =>  `(` + moment(getjointime[n]).format('LTS') + `) ` + n.displayName);
    
       const embed = new Discord.RichEmbed()
-        .setTitle("<#698323056484941914> Player List")
-        .addField("<#698323056484941914> Player List", membersInQueue.join(`\n`))
+        .setTitle("Lobby 1 Player List")
         .setColor("#FEE354")
+        .setDescription(membersInQueue.join("\n"))
         .setFooter('Vice Valorant 10mans/Scrims ');
     return message.channel.send({embed});
     }
@@ -122,7 +122,7 @@ client.on("message", async message =>
       let membersInQueue = membersInChannel.map(n =>  " (" + moment(getjointime[n]).format('LTS') + ") " + n.displayName);
 
       const embed = new Discord.RichEmbed()
-        .setTitle("<#822288145374511114> Player List")
+        .setTitle("Lobby 2 Player List")
         .setColor("#FEE354")
         .setDescription(membersInQueue.join("\n"))
         .setFooter('Vice Valorant 10mans/Scrims');
