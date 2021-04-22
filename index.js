@@ -72,8 +72,8 @@ client.on("message", async message =>
       let membersInQueue = membersInChannel.map(n =>  `(` + moment(getjointime[n]).format('LTS') + `) ` + n.displayName);
    
       const embed = new Discord.RichEmbed()
-        .setTitle("Queue 1")
-        .setColor("#FF0000")
+        .setTitle("Lobby 1")
+        .setColor("#FEE354")
         .setDescription(membersInQueue.join(`\n`))
         .setFooter('Vice Valorant 10mans/Scrims ');
     return message.channel.send({embed});
@@ -89,7 +89,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
 
       //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #1.');
       let queue1embed = new Discord.RichEmbed()
-      .setColor("#FF0000")
+      .setColor("#FEE354")
       .setDescription (`${newMember.displayName} joined queue 1.`)
       .setTimestamp();
           
