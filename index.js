@@ -65,14 +65,14 @@ client.on("message", async message =>
     let cmd = messageArray[0];
 
 
-    if(cmd === `${prefix}queue1`)
+    if(cmd === `${prefix}lobby1`)
     {
 
       let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323056484941914");
       let membersInQueue = membersInChannel.map(n =>  `(` + moment(getjointime[n]).format('LTS') + `) ` + n.displayName);
    
       const embed = new Discord.RichEmbed()
-        .setTitle("Queue NA (EST)")
+        .setTitle("Queue 1")
         .setColor("#FF0000")
         .setDescription(membersInQueue.join(`\n`))
         .setFooter('Vice Valorant 10mans/Scrims ');
@@ -116,13 +116,13 @@ client.on("message", async message =>
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
 
-    if(cmd === `${prefix}queue2`)
+    if(cmd === `${prefix}lobby2`)
     {
       let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323700025524345");
       let membersInQueue = membersInChannel.map(n =>  " (" + moment(getjointime[n]).format('LTS') + ") " + n.displayName);
 
       const embed = new Discord.RichEmbed()
-        .setTitle("Queue 2 (EST)")
+        .setTitle("Lobby 2 ")
         .setColor("#FF0000")
         .setDescription(membersInQueue.join("\n"))
         .setFooter('Vice Valorant 10mans/Scrims');
