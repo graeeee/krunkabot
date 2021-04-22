@@ -238,31 +238,5 @@ client.on("message", async message => {
     message.channel.send(test)
     }
 });
-//join message
- client.on( "guildMemberAdd", member => {
-let textChannel = member.guild.channels.find(channel => channel.id === '698322950079905883');
 
-if (textChannel){
-        var messages = [
-            `Welcome <@${member.user.id}>. We hope you brought pizza.`,
-            `<@${member.user.id}> just slid into the server.`,
-            `A wild <@${member.user.id}> appeared.`,
-            `Yay you made it, <@${member.user.id}>!`,
-            `<@${member.user.id}> is here.`,
-            `Good to see you, <@${member.user.id}>.`,
-            `Everyone welcome <@${member.user.id}>!`,
-            `<@${member.user.id}> just showed up!`,
-            `<@${member.user.id}> just landed!`,
-            `Glad you're here, <@${member.user.id}>.`,
-            `<@${member.user.id}> joined the party.`
-        ]
-
-        textChannel.send({embed: {
-            color: F8C300,
-            description: messages[ Math.floor( Math.random() * 11 ) ],
-            timestamp: new Date(),
-        }
-        }); 
-    }
-});
 client.login(process.env.bot_token);
