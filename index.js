@@ -118,7 +118,7 @@ client.on("message", async message =>
 
     if(cmd === `${prefix}lobby2`)
     {
-      let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "698323700025524345");
+      let membersInChannel = message.guild.members.filter(n => n.voiceChannelID === "822288145374511114");
       let membersInQueue = membersInChannel.map(n =>  " (" + moment(getjointime[n]).format('LTS') + ") " + n.displayName);
 
       const embed = new Discord.RichEmbed()
@@ -135,7 +135,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) =>
 {
     if(oldMember.voiceChannel === undefined || oldMember.voiceChannelID !== newMember.voiceChannelID)
     {
-      if(newMember.voiceChannel === undefined || newMember.voiceChannelID !== "698323700025524345")
+      if(newMember.voiceChannel === undefined || newMember.voiceChannelID !== "822288145374511114")
         return;
 
       //console.log('[DEBUG]Console: ' + newMember.displayName + ' joined voice channel 10 man queue #2.');
