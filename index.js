@@ -238,5 +238,4 @@ client.on("message", async message => {
     message.channel.send(test)
     }
 });
-
 client.login(process.env.bot_token);
