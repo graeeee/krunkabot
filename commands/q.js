@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
     .addField("**Step 3**", "Post your current riot name and id ***(e.g., username#1234)***, and thats it!")
     .addField("**Step 4**", "Patiently wait for a host to see your messages, and they will give you access to the lobby voice channels.")    
     .setTimestamp()
-    .setFooter('This message will delete in 1 minute to prevent spam', botpfp);
+    .setFooter('Vice Valorant 10mans/Scrims', botpfp);
     message.channel.send(demoembed);
 }
     module.exports.help = {
