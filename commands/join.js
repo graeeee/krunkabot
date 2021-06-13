@@ -15,5 +15,5 @@ module.exports.run = async (client, message, args) => {
     message.channel.send(demoembed);
 }
     module.exports.help = {
-        name: "howtoplay"
+        name: "join"
     }
