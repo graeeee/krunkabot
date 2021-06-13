@@ -13,9 +13,7 @@ module.exports.run = async (client, message, args) => {
     .setTimestamp()
     .setFooter('This message will delete in 1 minute to prevent spam', botpfp);
     message.channel.send(demoembed);
-      .then(msg => {
-    msg.delete(10000)
-    await 
+    await message.delete(1000)
 }
     module.exports.help = {
         name: "join"
