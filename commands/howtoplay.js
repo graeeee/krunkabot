@@ -4,7 +4,6 @@ module.exports.run = async (client, message, args) => {
     
     let botpfp = client.user.displayAvatarURL;
     let demoembed = new Discord.RichEmbed()
-    .setThumbnail(botpfp)
     .setTitle("**What you need to do to join our 10mans**")
     .setColor("#808080")
     .setDescription("**(Step 1)** - Read all the rules on our website (https://vicevalorant.com/10mans)\n",
