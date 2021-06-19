@@ -8,5 +8,4 @@ bot.on('message', (message) => {
     module.exports.help = {
         name: "allgood"
     }
-});
 
