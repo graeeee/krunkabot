@@ -238,4 +238,11 @@ client.on("message", async message => {
     message.channel.send(test)
     }
 });
+
+
+client.on('message', (message) => {
+    if(message.content == 'all good') {
+        message.reply('All good.');
+    }
+}
 client.login(process.env.bot_token);
