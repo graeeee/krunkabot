@@ -244,5 +244,5 @@ client.on('message', (message) => {
     if(message.content == 'all good') {
         message.reply('All good.');
     }
-}
+});
 client.login(process.env.bot_token);
