@@ -79,11 +79,12 @@ client.on("message", async message =>
     return message.channel.send({embed});
     }
 });
-//queue1
 client.on('voiceStateUpdate', (oldMember, newMember) =>
 {
+    console.log('voiceStateUpdate enterance');
     if(oldMember.voiceChannel === undefined || oldMember.voiceChannelID !== newMember.voiceChannelID)
     {
+      console.log('voiceStateUpdate inside 1st if');
       if(newMember.voiceChannel === undefined || newMember.voiceChannelID !== "698323056484941914")
         return;
 
