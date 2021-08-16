@@ -246,4 +246,17 @@ client.on('message', (message) => {
         message.reply('All good.');
     }
 });
+client.on("message", message => {
+
+    if(message.content.startsWith(`${prefix}go4-add`)) {
+        message.mentions.members.first().addRole('700235039161581619'); // gets the <GuildMember> from a mention and then adds the role to that member                     
+    }
+
+    if(message.content == `${prefix}testlist`) {
+        const ListEmbed = new Discord.RichEmbed()
+            .setTitle('Users with the go4 role:')
+            .setDescription(message.guild.roles.get('700235039161581619').members.map(m=>m.user.tag).join('\n'));
+        message.channel.send(ListEmbed);                    
+    }
+});
 client.login(process.env.bot_token);
