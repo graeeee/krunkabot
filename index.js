@@ -247,6 +247,10 @@ client.on('message', (message) => {
     }
 });
 client.on("message", message => {
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
 
     if(message.content.startsWith(`${prefix}go4-add`)) {
         message.mentions.members.first().addRole('700235039161581619'); // gets the <GuildMember> from a mention and then adds the role to that member                     
