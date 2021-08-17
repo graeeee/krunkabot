@@ -246,9 +246,9 @@ client.on('message', (message) => {
         message.reply('All good.');
     }
 });
-   let prefix = botconfig.prefix;
-   let cmd = messageArray[0];
    if(cmd === `${prefix}testlobby`)
+		let prefix = botconfig.prefix;
+   		let cmd = messageArray[0];
 	{
 		let membersInChannel = message.guild.members.cache.filter(n => n.voice.channelID === "822288145374511114");
 		let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
