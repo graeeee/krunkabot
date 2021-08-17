@@ -263,6 +263,7 @@ client.on('message', (message) => {
 
 		return message.channel.send({embed});
 	}
+});
 
 bot.on('voiceStateUpdate', (oldState, newState) =>
 {	
