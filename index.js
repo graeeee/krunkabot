@@ -246,21 +246,35 @@ client.on('message', (message) => {
         message.reply('All good.');
     }
 });
-client.on("message", message => {
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
+   let prefix = botconfig.prefix;
+   let messageArray = message.content.split(" ");
+   let cmd = messageArray[0];
+   if(cmd === `${prefix}testlobby`)
+	{
+		let membersInChannel = message.guild.members.cache.filter(n => n.voice.channelID === "698323056484941914");
+		let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
 
-    if(message.content.startsWith(`${prefix}go4-add`)) {
-        message.mentions.members.first().addRole('700235039161581619'); // gets the <GuildMember> from a mention and then adds the role to that member                     
-    }
+		const embed = new Discord.MessageEmbed()
+		.setTitle("Current Queue #1")
+		.setColor("#FEE354")
+        .setDescription(membersInQueue.join("\n"))
+        .setTimestamp()
 
-    if(message.content == `${prefix}testlist`) {
-        const ListEmbed = new Discord.RichEmbed()
-            .setTitle('Users with the go4 role:')
-            .setDescription(message.guild.roles.get('700235039161581619').members.map(m=>m.user.tag).join('\n'));
-        message.channel.send(ListEmbed);                    
-    }
+		return message.channel.send({embed});
+	}
+	
 });
+
+bot.on('voiceStateUpdate', (oldState, newState) =>
+{	
+	if(newState.member.voice.channelID === "698323056484941914") // Voice channel for queue
+	{
+		console.log('[DEBUG]Console: ' + newState.member.displayName + ' joined lobby 1.');
+		const m = newState.member.guild.channels.cache.get('771545218642214924').send(newState.member.displayName + ' joined lobby 1.')
+              .then((msg) => {
+                  getjointime[newState.member] = msg.createdTimestamp;
+      });
+	}
+});
+
 client.login(process.env.bot_token);
