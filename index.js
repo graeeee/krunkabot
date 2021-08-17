@@ -265,7 +265,7 @@ client.on('message', (message) => {
 	}
 });
 
-bot.on('voiceStateUpdate', (oldState, newState) =>
+client.on('voiceStateUpdate', (oldState, newState) =>
 {	
 	if(newState.member.voice.channelID === "822288145374511114") // Voice channel for queue
 	{
