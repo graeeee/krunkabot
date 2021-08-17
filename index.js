@@ -261,7 +261,6 @@ client.on('message', (message) => {
         .setTimestamp()
 
 		return message.channel.send({embed});
-	}
 	
 });
 
