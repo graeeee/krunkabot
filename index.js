@@ -246,6 +246,10 @@ client.on('message', (message) => {
         message.reply('All good.');
     }
 });
+
+		let prefix = botconfig.prefix;
+    		let messageArray = message.content.split(" ");
+    		let cmd = messageArray[0];
    if(cmd === `${prefix}testlobby`)
 	{
 		let membersInChannel = message.guild.members.cache.filter(n => n.voice.channelID === "822288145374511114");
