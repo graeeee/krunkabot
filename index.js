@@ -251,7 +251,7 @@ client.on('message', (message) => {
    let cmd = messageArray[0];
    if(cmd === `${prefix}testlobby`)
 	{
-		let membersInChannel = message.guild.members.cache.filter(n => n.voice.channelID === "698323056484941914");
+		let membersInChannel = message.guild.members.cache.filter(n => n.voice.channelID === "822288145374511114");
 		let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
 
 		const embed = new Discord.MessageEmbed()
@@ -267,7 +267,7 @@ client.on('message', (message) => {
 
 bot.on('voiceStateUpdate', (oldState, newState) =>
 {	
-	if(newState.member.voice.channelID === "698323056484941914") // Voice channel for queue
+	if(newState.member.voice.channelID === "822288145374511114") // Voice channel for queue
 	{
 		console.log('[DEBUG]Console: ' + newState.member.displayName + ' joined lobby 1.');
 		const m = newState.member.guild.channels.cache.get('771545218642214924').send(newState.member.displayName + ' joined lobby 1.')
