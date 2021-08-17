@@ -246,7 +246,7 @@ client.on('message', (message) => {
         message.reply('All good.');
     }
 });
-
+client.on('message', (message) => {
 		let prefix = botconfig.prefix;
     		let messageArray = message.content.split(" ");
     		let cmd = messageArray[0];
