@@ -261,8 +261,7 @@ client.on('message', (message) => {
         .setTimestamp()
 
 		return message.channel.send({embed});
-	
-});
+	}
 
 bot.on('voiceStateUpdate', (oldState, newState) =>
 {	
