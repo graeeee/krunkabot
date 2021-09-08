@@ -246,35 +246,5 @@ client.on('message', (message) => {
         message.reply('All good.');
     }
 });
-client.on('message', (message) => {
-		let prefix = botconfig.prefix;
-    		let messageArray = message.content.split(" ");
-    		let cmd = messageArray[0];
-   if(cmd === `${prefix}testlobby`)
-	{
-		let membersInChannel = message.guild.members.cache.filter(n => n.voice.channelID === "822288145374511114");
-		let membersInQueue = membersInChannel.map(n => n.displayName + " (" + cleanDate(getjointime[n]) + ")");
-
-		const embed = new Discord.MessageEmbed()
-		.setTitle("Current Queue #1")
-		.setColor("#FEE354")
-        .setDescription(membersInQueue.join("\n"))
-        .setTimestamp()
-
-		return message.channel.send({embed});
-	}
-});
-
-client.on('voiceStateUpdate', (oldState, newState) =>
-{	
-	if(newState.member.voice.channelID === "822288145374511114") // Voice channel for queue
-	{
-		console.log('[DEBUG]Console: ' + newState.member.displayName + ' joined lobby 1.');
-		const m = newState.member.guild.channels.cache.get('771545218642214924').send(newState.member.displayName + ' joined lobby 1.')
-              .then((msg) => {
-                  getjointime[newState.member] = msg.createdTimestamp;
-      });
-	}
-});
 
 client.login(process.env.bot_token);
