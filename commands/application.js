@@ -49,8 +49,7 @@ module.exports = {
                   .setDescription(mappedResponses)
                   .setColor("#ffd253")
                   .setTimestamp()
-                
-            );
+                        );
                  });
-  },
+            },
        };
