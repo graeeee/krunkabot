@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
       }
     });
     
-    const appChannel = client.channels.cache.get("887160839084335184");
+    const appsChannel = client.channels.cache.get("887160839084335184");
     collector.on("end", (collected, reason) => {
               if (reason === "fulfilled") {
                  let index = 1;
