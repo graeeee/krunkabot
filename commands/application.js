@@ -1,8 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports = {
-    name: "apply",
-  
+
   run: async (client, message, args) => {
     const questions = [
       "What is your discord name and ID? Ex. (username#4321)",
