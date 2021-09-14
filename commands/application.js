@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 
-
-  run: async (client, message, args) => {
+module.exports.run = async (client, message, args) => {
     const questions = [
       "What is your discord name and ID? Ex. (username#4321)",
       "What is your riot name and ID? Ex. (username#1234)",
