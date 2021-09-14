@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
       }
     });
     
-    const appsChannel = client.channels.cache.find((ch) => ch.name === '10-man-apps');
+    const appsChannel = client.channels.cache.get((ch) => ch.name === '10-man-apps');
     collector.on("end", (collected, reason) => {
               if (reason === "fulfilled") {
                  let index = 1;
