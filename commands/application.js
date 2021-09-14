@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
     const collector = channel.createMessageCollector(filter);
     
     collector.on("collect", () => {
-      if(collectCounter < question.length) {
+      if(collectCounter < questions.length) {
         channel.send(questions[collectCounter++]);
       } else {
         channel.send("Your Application has been sent, please wait till a host or admin recieves your request.");
