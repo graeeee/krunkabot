@@ -31,7 +31,7 @@ module.exports = {
     
     const appChannel = client.channels.cache.get("887160839084335184");
     collector.on("end", (collected, reason) => {
-              if (reason === 'fulfilled") {
+              if (reason === "fulfilled") {
                  let index = 1;
                  const mappedResponses = collected.map((msg) => {
                      return `${index++}) ${questions[endCounter++]}\n-> ${msg.content}`
