@@ -22,9 +22,9 @@ module.exports = {
     
     collector.on("collect", () => {
       if(collectCounter < question.length) {
-        channel.send(questions[collectCounter++])
+        channel.send(questions[collectCounter++]);
       } else {
-        channel.send("Your Application has been sent, please wait till a host or admin recieves your request.")
+        channel.send("Your Application has been sent, please wait till a host or admin recieves your request.");
         collector.stop("fullfilled");
       }
     });
@@ -49,5 +49,6 @@ module.exports = {
                   .setDescription(mappedResponses)
                   .setColor("#ffd253")
                   .setTimestamp()
-           );
-       },
+                });
+           ),
+       };
