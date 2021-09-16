@@ -247,4 +247,4 @@ client.on('message', (message) => {
     }
 });
 
-client.login(process.env.bot_tokefasn);
+client.login(process.env.bot_token);
